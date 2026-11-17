@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>彩虹gtv男男-多元社群内容指南</title>
+<meta name="description" content="彩虹gtv男男是面向男同志社群的多元内容导航，汇总影音资源、社群活动、健康科普与阅读清单，提供分类入口、深度解析与体验指南，方便新老用户按兴趣与需求快速找到合适内容。">
+<meta name="keywords" content="彩虹gtv男男">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f2a52'/%3E%3Cpath d='M14 40a18 18 0 0 1 36 0' fill='none' stroke='%23ef476f' stroke-width='5'/%3E%3Cpath d='M20 40a12 12 0 0 1 24 0' fill='none' stroke='%23ffd166' stroke-width='5'/%3E%3Cpath d='M26 40a6 6 0 0 1 12 0' fill='none' stroke='%2306d6a0' stroke-width='5'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1c2430;
+  --ink-soft:#41506199;
+  --paper:#f7f5f2;
+  --card:#ffffff;
+  --brand:#1f2a52;
+  --brand-2:#2f3d75;
+  --accent:#ef476f;
+  --accent-2:#ffd166;
+  --accent-3:#06d6a0;
+  --line:#dfdcd6;
+  --muted:#6b7280;
+  --radius-s:8px;
+  --radius-m:14px;
+  --radius-l:22px;
+  --shadow-s:0 1px 2px rgba(28,36,48,.06),0 4px 12px rgba(28,36,48,.05);
+  --shadow-m:0 6px 24px rgba(28,36,48,.10);
+  --space-1:6px;
+  --space-2:12px;
+  --space-3:18px;
+  --space-4:26px;
+  --space-5:38px;
+  --space-6:56px;
+  --font-base:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --header-h:60px;
+  --notice-h:40px;
+  --stick:calc(var(--header-h) + var(--notice-h));
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--font-base);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{line-height:1.35;margin:0 0 var(--space-2)}
+h1{font-size:clamp(1.7rem,3.6vw,2.5rem);letter-spacing:.5px}
+h2{font-size:clamp(1.3rem,2.4vw,1.65rem)}
+h3{font-size:1.08rem}
+p{margin:0 0 var(--space-2)}
+ul,ol{margin:0 0 var(--space-2);padding-left:1.25em}
+li{margin-bottom:6px}
+section{scroll-margin-top:calc(var(--stick) + 10px)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+/* 公告条 + 页头吸顶 */
+.stick-wrap{position:sticky;top:0;z-index:60}
+.notice-bar{
+  height:var(--notice-h);
+  display:flex;align-items:center;justify-content:center;
+  gap:10px;
+  background:linear-gradient(90deg,var(--brand),var(--brand-2) 55%,#3b2a63);
+  color:#f4f2ff;font-size:.82rem;letter-spacing:.3px;
+  padding:0 14px;text-align:center;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.notice-bar strong{color:var(--accent-2);font-weight:600}
+.site-header{
+  height:var(--header-h);
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  display:flex;align-items:center;
+}
+.header-inner{display:flex;align-items:center;gap:var(--space-3);width:100%}
+.brand{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.brand svg{width:34px;height:34px;flex:0 0 auto}
+.brand-text{font-weight:700;font-size:1.02rem;color:var(--brand);letter-spacing:.4px}
+.main-nav{margin-left:auto;display:flex;align-items:center;gap:2px}
+.main-nav a{
+  padding:7px 10px;border-radius:8px;font-size:.9rem;color:var(--ink);
+  white-space:nowrap;
+}
+.main-nav a:hover,.main-nav a:focus-visible{background:#eceaf5;text-decoration:none}
+.header-cta{
+  margin-left:var(--space-2);
+  background:var(--brand);color:#fff;padding:7px 14px;border-radius:999px;
+  font-size:.86rem;white-space:nowrap;
+}
+.header-cta:hover{background:var(--brand-2);text-decoration:none}
+.menu-btn{
+  display:none;margin-left:auto;background:#f0eef8;border:1px solid var(--line);
+  border-radius:8px;padding:7px 12px;font-size:.9rem;color:var(--brand);
+  cursor:pointer;font-family:inherit;
+}
+.menu-btn:focus-visible{outline:3px solid var(--accent-3);outline-offset:2px}
+
+/* 首屏 */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 340px at 82% -10%,rgba(239,71,111,.16),transparent 60%),
+    radial-gradient(700px 320px at 8% 110%,rgba(6,214,160,.14),transparent 60%),
+    linear-gradient(160deg,#ffffff,#f2efe9 70%);
+  border-bottom:1px solid var(--line);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.25fr .95fr;gap:var(--space-5);
+  padding:var(--space-6) 0 var(--space-5);align-items:center;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.78rem;letter-spacing:1.5px;color:var(--brand-2);
+  background:#fff;border:1px solid var(--line);border-radius:999px;
+  padding:4px 14px;margin-bottom:var(--space-3);
+}
+.hero-tag i{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
+.hero-lead{font-size:1.02rem;color:#3c4657;max-width:56ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:var(--space-3)}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 20px;border-radius:999px;font-size:.94rem;font-weight:600;
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:var(--shadow-s)}
+.btn-primary:hover{transform:translateY(-2px);text-decoration:none;box-shadow:var(--shadow-m)}
+.btn-ghost{background:#fff;color:var(--brand);border:1px solid var(--line)}
+.btn-ghost:hover{transform:translateY(-2px);text-decoration:none}
+.hero-stats{display:flex;flex-wrap:wrap;gap:var(--space-4);margin-top:var(--space-4)}
+.hero-stat b{display:block;font-size:1.5rem;color:var(--brand);line-height:1.2}
+.hero-stat span{font-size:.82rem;color:var(--muted)}
+.hero-art{position:relative;min-height:320px}
+.hero-art svg{width:100%;height:auto}
+.art-note{
+  position:absolute;background:#fff;border:1px solid var(--line);border-radius:12px;
+  box-shadow:var(--shadow-s);font-size:.78rem;padding:8px 12px;color:#3f4b5e;
+  line-height:1.5;
+}
+.art-note.n1{top:6%;left:0}
+.art-note.n2{bottom:8%;right:0}
+
+/* 主内容布局 */
+.layout{
+  display:grid;grid-template-columns:minmax(0,1fr) 300px;
+  gap:var(--space-5);padding:var(--space-5) 0 var(--space-6);
+  align-items:start;
+}
+.main-col{min-width:0}
+.side-col{position:sticky;top:calc(var(--stick) + 16px);display:flex;flex-direction:column;gap:var(--space-3)}
+
+/* 板块通用 */
+.panel{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-l);
+  padding:var(--space-4);box-shadow:var(--shadow-s);margin-bottom:var(--space-4);
+}
+.panel-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:var(--space-3)}
+.panel-head h2{margin:0}
+.panel-head .eyebrow{font-size:.76rem;letter-spacing:1.6px;color:var(--accent);font-weight:700;text-transform:uppercase}
+.panel-sub{color:var(--muted);font-size:.88rem}
+.hr-soft{height:1px;background:var(--line);border:0;margin:var(--space-3) 0}
+
+/* 概览卡 */
+.overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-2)}
+.ov-card{background:#f5f3fb;border:1px solid #e6e2f2;border-radius:var(--radius-m);padding:14px 16px}
+.ov-card h3{font-size:.98rem;margin-bottom:4px;color:var(--brand-2)}
+.ov-card p{margin:0;font-size:.85rem;color:#4b5563}
+
+/* 精选卡片 */
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-3)}
+.feature-card{
+  border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden;background:#fff;
+  display:flex;flex-direction:column;transition:transform .18s ease, box-shadow .18s ease;
+}
+.feature-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-m)}
+.feature-card img{width:100%;height:158px;object-fit:cover}
+.feature-body{padding:14px 16px 16px}
+.feature-body h3{font-size:1rem;margin-bottom:6px}
+.feature-body p{font-size:.86rem;color:#4b5563;margin-bottom:8px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;font-size:.76rem;color:var(--muted)}
+.meta .tag{background:#f1eef9;color:var(--brand-2);border-radius:999px;padding:1px 10px}
+
+/* 紧凑列表 */
+.compact-list{list-style:none;padding:0;margin:0}
+.compact-list li{
+  display:grid;grid-template-columns:74px 1fr auto;gap:12px;align-items:center;
+  padding:11px 0;border-bottom:1px dashed var(--line);margin:0;font-size:.92rem;
+}
+.compact-list li:last-child{border-bottom:0}
+.compact-list time{font-size:.78rem;color:var(--muted)}
+.pill{font-size:.7rem;background:#eafaf3;color:#067a5c;border-radius:999px;padding:1px 9px;white-space:nowrap}
+.pill.blue{background:#eef2ff;color:#3949ab}
+.pill.pink{background:#fdeef3;color:#c2185b}
+
+/* 分类入口 */
+.cat-index{display:flex;flex-wrap:wrap;gap:10px}
+.cat-chip{
+  background:#fff;border:1px solid var(--line);border-radius:999px;
+  padding:8px 16px;font-size:.9rem;color:var(--brand);transition:background .15s ease;
+}
+.cat-chip:hover{background:#f3f0ff;text-decoration:none}
+
+/* 深度解析 */
+.deep{background:linear-gradient(180deg,#ffffff,#fbfaff)}
+.deep .lead-judge{
+  border-left:4px solid var(--accent);background:#fff8f9;border-radius:0 12px 12px 0;
+  padding:14px 18px;font-size:.98rem;
+}
+.deep h3{margin-top:var(--space-4);border-bottom:1px solid var(--line);padding-bottom:6px}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-2);margin:var(--space-2) 0}
+.compare > div{border:1px solid var(--line);border-radius:var(--radius-m);padding:14px;background:#fff}
+.compare .cb-title{font-weight:700;color:var(--brand-2);font-size:.92rem;margin-bottom:6px}
+.quote-card{
+  background:#f4f1e9;border-radius:var(--radius-m);padding:16px 18px;font-size:.92rem;
+  border-left:4px solid var(--accent-2);
+}
+
+/* 步骤 */
+.steps{list-style:none;padding:0;counter-reset:step;display:grid;gap:var(--space-2)}
+.steps li{
+  counter-increment:step;position:relative;background:#f8f7f4;border:1px solid var(--line);
+  border-radius:var(--radius-m);padding:14px 16px 14px 58px;margin:0;font-size:.9rem;
+}
+.steps li::before{
+  content:counter(step);position:absolute;left:14px;top:14px;
+  width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:.86rem;font-weight:700;
+}
+.steps b{display:block;margin-bottom:2px;color:var(--brand-2)}
+
+/* FAQ */
+.faq details{border:1px solid var(--line);border-radius:var(--radius-m);padding:0;margin-bottom:10px;background:#fff;overflow:hidden}
+.faq summary{
+  cursor:pointer;padding:12px 16px;font-weight:600;font-size:.94rem;list-style:none;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--accent);font-size:1.2rem;line-height:1;flex:0 0 auto}
+.faq details[open] summary::after{content:"–"}
+.faq summary:focus-visible{outline:3px solid var(--accent-3);outline-offset:-3px}
+.faq .faq-a{padding:0 16px 14px;font-size:.9rem;color:#3f4b5e}
+
+/* 评论 */
+.comment-list{display:grid;gap:var(--space-2)}
+.comment{border:1px solid var(--line);border-radius:var(--radius-m);padding:13px 16px;background:#fff}
+.comment-head{display:flex;align-items:center;gap:10px;margin-bottom:5px;font-size:.84rem}
+.avatar{width:30px;height:30px;border-radius:50%;background:#dedaf5;color:var(--brand);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem}
+.comment-head b{font-weight:600}
+.comment-head time{margin-left:auto;color:var(--muted);font-size:.76rem}
+.comment p{margin:0;font-size:.9rem;color:#3b4452}
+.tone-warn{color:#b45309}
+
+/* 资讯 */
+.news-list{list-style:none;padding:0;margin:0}
+.news-list li{padding:11px 0;border-bottom:1px dashed var(--line);margin:0}
+.news-list li:last-child{border:0}
+.news-list h3{font-size:.96rem;margin-bottom:3px}
+.news-list p{margin:0;font-size:.85rem;color:#4b5563}
+
+/* 标签索引 */
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags a{
+  font-size:.84rem;background:#f2f0ea;border:1px solid var(--line);
+  border-radius:8px;padding:5px 12px;color:#3b4452;
+}
+.tags a:hover{background:#e8e4f9;text-decoration:none}
+
+/* 时间线 */
+.timeline{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid #e3def5}
+.timeline li{position:relative;margin-bottom:var(--space-3);font-size:.9rem}
+.timeline li::before{
+  content:"";position:absolute;left:-29px;top:6px;width:10px;height:10px;border-radius:50%;
+  background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 2px #f0ecfb;
+}
+.timeline b{display:block;color:var(--brand-2);font-size:.9rem}
+.timeline time{font-size:.78rem;color:var(--muted)}
+
+/* 侧栏 */
+.side-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-m);padding:16px;box-shadow:var(--shadow-s)}
+.side-card h3{font-size:.94rem;margin-bottom:10px;color:var(--brand)}
+.search-box{display:flex;gap:8px}
+.search-box input{
+  flex:1;min-width:0;border:1px solid var(--line);border-radius:8px;padding:8px 10px;
+  font-size:.88rem;font-family:inherit;background:#fbfaf8;
+}
+.search-box input:focus{outline:2px solid var(--accent-3);outline-offset:1px}
+.search-box button{
+  border:0;background:var(--brand);color:#fff;border-radius:8px;padding:8px 14px;
+  font-size:.86rem;cursor:pointer;font-family:inherit;
+}
+.search-result{font-size:.84rem;color:#4b5563;margin-top:10px}
+.search-result ul{padding-left:1.1em;margin:6px 0 0}
+.side-nav ul{list-style:none;padding:0;margin:0;font-size:.88rem}
+.side-nav a{display:block;padding:6px 10px;border-radius:7px;color:#3b4452}
+.side-nav a.active,.side-nav a:hover{background:#f0edfa;color:var(--brand);text-decoration:none}
+
+/* 页尾 */
+.site-footer{background:#1b2544;color:#c9cde0;padding:var(--space-5) 0 var(--space-3);margin-top:var(--space-4)}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:var(--space-4)}
+.site-footer h4{color:#fff;font-size:.92rem;margin-bottom:10px}
+.site-footer a{color:#c9cde0;font-size:.86rem}
+.site-footer a:hover{color:#fff}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.footer-brand .brand-text{color:#fff}
+.footer-brand svg{width:30px;height:30px}
+.footer-pos{font-size:.86rem;color:#a7aecb;max-width:34ch;margin:0 0 10px}
+.footer-links{list-style:none;padding:0;margin:0}
+.footer-links li{margin-bottom:6px}
+.footer-note{border-top:1px solid #2c3760;margin-top:var(--space-4);padding-top:var(--space-3);font-size:.78rem;color:#8f97b8;display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:space-between}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:20px;bottom:24px;z-index:70;
+  width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;
+  background:var(--brand);color:#fff;font-size:1.1rem;box-shadow:var(--shadow-m);
+  opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease;
+}
+.to-top.show{opacity:1;pointer-events:auto}
+.to-top:hover{transform:translateY(-2px)}
+.to-top:focus-visible{outline:3px solid var(--accent-3);outline-offset:2px}
+
+/* 平板 */
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr}
+  .side-col{position:static}
+  .hero-grid{grid-template-columns:1fr;padding-top:var(--space-5)}
+  .hero-art{order:-1;min-height:0;max-width:520px}
+  .main-nav{
+    display:none;position:absolute;left:0;right:0;top:calc(var(--stick));
+    background:#fff;border-bottom:1px solid var(--line);flex-direction:column;
+    align-items:stretch;padding:10px 16px 16px;gap:2px;box-shadow:var(--shadow-s);
+  }
+  .main-nav.open{display:flex}
+  .main-nav a{padding:10px 12px}
+  .header-cta{display:none}
+  .menu-btn{display:inline-block}
+  .site-header{position:relative}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .overview-grid{grid-template-columns:1fr}
+  .feature-grid{grid-template-columns:1fr}
+  .compare{grid-template-columns:1fr}
+}
+/* 手机 */
+@media (max-width:600px){
+  .wrap{padding:0 14px}
+  .panel{padding:var(--space-3);border-radius:var(--radius-m)}
+  .compact-list li{grid-template-columns:1fr;gap:2px;align-items:start}
+  .compact-list time{grid-row:1}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-stats{gap:var(--space-3)}
+  .to-top{right:14px;bottom:18px}
+  .art-note{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .feature-card:hover,.btn:hover,.to-top:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="stick-wrap">
+  <div class="notice-bar" role="status">
+    <span><strong>更新</strong> 11 月 6 日收录「同志影展排片表」与「城市友善空间地图 2026 秋版」，新增 14 条线下活动</span>
+  </div>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/#top" aria-label="返回首页顶部">
+        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <rect width="64" height="64" rx="14" fill="#1f2a52"/>
+          <path d="M14 42a18 18 0 0 1 36 0" fill="none" stroke="#ef476f" stroke-width="5" stroke-linecap="round"/>
+          <path d="M20 42a12 12 0 0 1 24 0" fill="none" stroke="#ffd166" stroke-width="5" stroke-linecap="round"/>
+          <path d="M26 42a6 6 0 0 1 12 0" fill="none" stroke="#06d6a0" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text">彩虹gtv男男</span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainNav" id="menuBtn">菜单</button>
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <a href="/#overview">社群概览</a>
+        <a href="/#picks">精选片单</a>
+        <a href="/#updates">本周更新</a>
+        <a href="/#channels">分类频道</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问题</a>
+      </nav>
+      <a class="header-cta" href="/#guide">新手指南</a>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="hero-tag"><i></i>同志影音与社群资讯导航 · 2026 秋</span>
+        <h1 id="heroTitle">彩虹gtv男男</h1>
+        <p class="hero-lead">面向男同志社群的影音与线下活动索引。这里整理同志题材影片、GTV 类频道排期、城市放映会和健康科普文档，按观看场景、议题与地区拆成可检索的分类，配有排片时间与参与门槛说明，方便第一次接触的人少走弯路。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#picks">看本周精选片单</a>
+          <a class="btn btn-ghost" href="/#channels">按频道浏览</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><b>126</b><span>收录影片与剧集条目</span></div>
+          <div class="hero-stat"><b>38</b><span>城市放映与沙龙排期</span></div>
+          <div class="hero-stat"><b>9</b><span>健康与关系科普专题</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 340" role="presentation">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#2f3d75"/><stop offset="1" stop-color="#5b4b8a"/>
+            </linearGradient>
+          </defs>
+          <rect x="18" y="26" width="384" height="288" rx="26" fill="url(#g1)"/>
+          <circle cx="96" cy="96" r="34" fill="#ef476f" opacity=".85"/>
+          <circle cx="156" cy="96" r="34" fill="#ffd166" opacity=".85"/>
+          <circle cx="216" cy="96" r="34" fill="#06d6a0" opacity=".85"/>
+          <rect x="52" y="170" width="316" height="14" rx="7" fill="#ffffff" opacity=".28"/>
+          <rect x="52" y="200" width="240" height="14" rx="7" fill="#ffffff" opacity=".2"/>
+          <rect x="52" y="230" width="180" height="14" rx="7" fill="#ffffff" opacity=".14"/>
+          <path d="M300 250l24 24 24-24" fill="none" stroke="#ffd166" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="art-note n1">本周排片 · 11/07 周六<br>放映 3 场 · 沙龙 2 场</div>
+        <div class="art-note n2">健康专题更新<br>PrEP 用药时间线</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap layout">
+    <div class="main-col">
+
+      <!-- 1 领域概览 -->
+      <section class="panel" id="overview" aria-labelledby="overviewTitle">
+        <div class="panel-head">
+          <span class="eyebrow">Overview</span>
+          <h2 id="overviewTitle">男同志影音内容的三个层次</h2>
+        </div>
+        <p>同类内容常被混在一起谈，实际差别很大。按制作与传播路径拆，大致分三层：独立短片与影展单元，通常 15—40 分钟，议题集中；平台剧集与自制栏目，单集 20 分钟上下，节奏快，话题偏情感与社交；纪录长片与访谈，涉及出柜、伴侣关系、HIV 防治，信息密度最高。三层的观看门槛与讨论方式并不相同。</p>
+        <div class="overview-grid">
+          <div class="ov-card">
+            <h3>影展短片单元</h3>
+            <p>2026 年 10 月至 11 月，北京、上海、成都三地合计 21 场短片放映，多为导演处女作。</p>
+          </div>
+          <div class="ov-card">
+            <h3>平台自制栏目</h3>
+            <p>更新频率高，常见周更。适合通勤碎片时间，议题停留在社交与情感层面。</p>
+          </div>
+          <div class="ov-card">
+            <h3>纪录与访谈</h3>
+            <p>包含伴侣访谈、医务工作者对谈，引用数据需核对发布机构与年份。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 精选内容推荐 -->
+      <section class="panel" id="picks" aria-labelledby="picksTitle">
+        <div class="panel-head">
+          <span class="eyebrow">Editors' Picks</span>
+          <h2 id="picksTitle">本周精选：四部值得排进日程的同志题材作品</h2>
+          <span class="panel-sub">按放映时间排序</span>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <img src="https://picsum.photos/seed/gtvfilm01/640/360" width="640" height="360" loading="lazy" alt="夜晚放映厅内观众席与银幕光晕">
+            <div class="feature-body">
+              <h3>《海雾之后》亚洲首映</h3>
+              <p>35 分钟短片，讲一对分手三年后在朋友婚礼上重逢的伴侣。11 月 7 日 19:30 上海静安，映后有 25 分钟导演问答。</p>
+              <div class="meta"><span class="tag">影展短片</span><time datetime="2026-11-07">11/07</time><span>静安 · 需预约</span></div>
+            </div>
+          </article>
+          <article class="feature-card">
+            <img src="https://picsum.photos/seed/gtvfilm02/640/360" width="640" height="360" loading="lazy" alt="访谈节目录制现场的柔光灯与麦克风">
+            <div class="feature-body">
+              <h3>《两个人的厨房》第 4 集</h3>
+              <p>同居五年的伴侣聊家务分配与出柜节奏，片长 28 分钟。对话里提到双方父母第一次见面的具体时间与场合。</p>
+              <div class="meta"><span class="tag">平台栏目</span><time datetime="2026-11-05">11/05 上线</time><span>免费</span></div>
+            </div>
+          </article>
+          <article class="feature-card">
+            <img src="https://picsum.photos/seed/gtvfilm03/640/360" width="640" height="360" loading="lazy" alt="城市夜晚街角的路灯与步行人群">
+            <div class="feature-body">
+              <h3>《夜班公交》成都场</h3>
+              <p>纪录片，跟拍三位夜班工作者。11 月 8 日 15:00 成都青羊，放映后有社区工作者分享，座位 80 个。</p>
+              <div class="meta"><span class="tag">纪录长片</span><time datetime="2026-11-08">11/08</time><span>青羊 · 免费</span></div>
+            </div>
+          </article>
+          <article class="feature-card">
+            <img src="https://picsum.photos/seed/gtvfilm04/640/360" width="640" height="360" loading="lazy" alt="书桌上摊开的剧本与彩色便签">
+            <div class="feature-body">
+              <h3>《台词之外》创作手记</h3>
+              <p>六位编剧谈同志角色写作，共 6 集，每周三更新。第 3 集列出近五年 12 部作品里被删改的台词对照。</p>
+              <div class="meta"><span class="tag">访谈</span><time datetime="2026-11-04">11/04 更新</time><span>需注册</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3 最新更新 -->
+      <section class="panel" id="updates" aria-labelledby="updatesTitle">
+        <div class="panel-head">
+          <span class="eyebrow">Updates</span>
+          <h2 id="updatesTitle">本周更新记录</h2>
+        </div>
+        <ul class="compact-list">
+          <li>
+            <time datetime="2026-11-07">11/07</time>
+            <span>北京同志中心放映排期补充 11 月场次，新增 4 部短片与 1 场导演连线。</span>
+            <span class="pill">排期</span>
+          </li>
+          <li>
+            <time datetime="2026-11-06">11/06</time>
+            <span>城市友善空间地图发布秋版，收录 63 家书店、咖啡馆与诊所，标注无障碍入口。</span>
+            <span class="pill blue">地图</span>
+          </li>
+          <li>
+            <time datetime="2026-11-05">11/05</time>
+            <span>《两个人的厨房》第 4 集上线，同时更新节目讨论区的常见提问汇总。</span>
+            <span class="pill pink">栏目</span>
+          </li>
+          <li>
+            <time datetime="2026-11-03">11/03</time>
+            <span>HIV 自检试剂领取点新增 6 个城市站点，领取流程说明改为 3 步。</span>
+            <span class="pill">健康</span>
+          </li>
+          <li>
+            <time datetime="2026-11-01">11/01</time>
+            <span>10 月影展短片单元收官，观众评分表整理完毕，平均分 7.9，共 214 份有效问卷。</span>
+            <span class="pill blue">数据</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 4 分类入口 -->
+      <section class="panel" id="channels" aria-labelledby="channelsTitle">
+        <div class="panel-head">
+          <span class="eyebrow">Channels</span>
+          <h2 id="channelsTitle">按频道找内容</h2>
+          <span class="panel-sub">点标签进入对应分类</span>
+        </div>
+        <div class="cat-index">
+          <a class="cat-chip" href="/#picks">同志短片放映</a>
+          <a class="cat-chip" href="/#picks">男同志情感剧集</a>
+          <a class="cat-chip" href="/#deep">出柜经历访谈</a>
+          <a class="cat-chip" href="/#guide">PrEP 用药科普</a>
+          <a class="cat-chip" href="/#guide">安全套与自检</a>
+          <a class="cat-chip" href="/#updates">城市友善空间</a>
+          <a class="cat-chip" href="/#community">线下观影沙龙</a>
+          <a class="cat-chip" href="/#creator">创作者手记</a>
+          <a class="cat-chip" href="/#faq">伴侣关系沟通</a>
+          <a class="cat-chip" href="/#news">亚洲同志影展动态</a>
+        </div>
+        <hr class="hr-soft">
+        <p class="panel-sub">十个频道分别对应观看、健康、社交与创作四类需求。影展与剧集类内容更新最快，健康类条目改动最少但需核对年份，社交类线下活动受场地限制，报名常提前一周关闭。</p>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section class="panel deep" id="deep" aria-labelledby="deepTitle">
+        <div class="panel-head">
+          <span class="eyebrow">Deep Dive</span>
+          <h2 id="deepTitle">深度解析：短片放映为什么比平台剧集更能留下讨论</h2>
+        </div>
+        <p class="lead-judge">判断：在男同志题材里，影展短片的讨论留存率高于平台周更剧集。依据是映后问答与二次讨论的组织方式，而非内容质量本身。这个判断可以被推翻——如果把“讨论留存”定义为播放量而非线下交流，结论会反过来。</p>
+
+        <h3>片长与讨论时长构成的结构差异</h3>
+        <p>2026 年 10 月，上海一场短片放映的数据：正片 35 分钟，映后问答 25 分钟，散场后微信群延续讨论约 3 天，产生 180 余条消息。同一时期一部周更栏目单集 20 分钟，弹幕与评论区在 48 小时内聚集约 400 条，但三天后新增不足 20 条。两组数字的口径不同，一个统计深度交流，一个统计即时反馈。愿意把两者放在一起比较，是因为它们回答同一个问题：看完之后还会不会再谈。</p>
+
+        <h3>三条时间线核对</h3>
+        <ul class="timeline">
+          <li><time datetime="2026-10-12">10 月 12 日</time><b>短片《海雾之后》试映</b>现场 62 人，映后 19 人留下参加问答，其中 7 人是第二次看同一部片。</li>
+          <li><time datetime="2026-10-19">10 月 19 日</time><b>平台栏目第 2 集上线</b>首日评论 213 条，关键词统计中“像我自己”出现 27 次，第四天新增评论 9 条。</li>
+          <li><time datetime="2026-10-26">10 月 26 日</time><b>成都社区沙龙</b>把短片与栏目各放一遍，30 人参与，讨论集中在短片里的沉默镜头，栏目部分只有 4 人发言。</li>
+        </ul>
+
+        <h3>两种说法的差异</h3>
+        <div class="compare">
+          <div>
+            <div class="cb-title">说法 A：线下放映门槛高，所以讨论深</div>
+            <p>支持者引用报名表数据：10 月四场放映平均报名 91 人，实到 68 人，到场率 75%。到场者已付出时间成本，愿意留下继续谈。</p>
+          </div>
+          <div>
+            <div class="cb-title">说法 B：门槛高不等于讨论质量高</div>
+            <p>沙龙组织者陈默在 10 月 26 日的记录里写道，30 人里有 11 人全程未发言，原因是不熟悉话题。门槛筛掉的是犹豫者，不一定是表达者。</p>
+          </div>
+        </div>
+        <p>两种说法各有可核对的部分，也各有推断成分。事实是到场率与发言人数，推测是“门槛提高带来表达意愿”。把推测写成结论，容易误导新观众，以为只要去现场就一定有收获。</p>
+
+        <h3>规则前后变化带来的变量</h3>
+        <p>2026 年 9 月起，部分放映改为映后自愿留下，不再要求全员参加。10 月数据显示，自愿留下比例在 28%—41% 之间，比 8 月强制留下的 100% 低，但留下的单次发言长度明显增加。这条对比只能说明形式变化，不能证明哪一种更好。想验证，需要连续三个月记录同一场地，排除片目差异。</p>
+
+        <div class="quote-card">“看片子和谈片子是两件事。排片表只解决了第一件。”——10 月 26 日成都沙龙记录，社区工作者周野的发言。</div>
+        <p style="margin-top:14px">如果要用一句话收束：选内容看片长与议题，选讨论看组织者是否给出具体提问。放映之后没有引导问题，再短的片子也会冷场；有明确议题，两小时的纪录片也能聊到闭馆。</p>
+      </section>
+
+      <!-- 6 体验指南 -->
+      <section class="panel" id="guide" aria-labelledby="guideTitle">
+        <div class="panel-head">
+          <span class="eyebrow">Guide</span>
+          <h2 id="guideTitle">第一次参加线下放映的体验指南</h2>
+        </div>
+        <ol class="steps">
+          <li><b>先看排期与时长</b>短片场通常 19:00 开放入场，正片前有 10 分钟说明。跨城场次建议提前 20 分钟到，签到需核对报名手机号后四位。</li>
+          <li><b>确认场地类型</b>书店放映多为 60—80 个座位，社区中心场地更宽松。场地方是否提供无障碍入口，在地图条目里有单独标注，可先查再报名。</li>
+          <li><b>了解映后安排</b>有映后问答的场次会在排期里写清时长，常见 20—30 分钟。不愿发言可以只旁听，2026 年 9 月后的场次均不再强制轮流发言。</li>
+          <li><b>健康类讲座单独登记</b>涉及 PrEP、自检试剂发放的场次需要额外填写匿名登记表，现场领取不核对身份证明，领取点与放映场地可能不在同一处。</li>
+          <li><b>散场后的跟进</b>多数场次建临时社群，保留 7—30 天。讨论质量取决于组织者是否在 24 小时内抛出第一个具体问题。</li>
+        </ol>
+        <hr class="hr-soft">
+        <p class="panel-sub">体验差异主要在场地与组织者，而不在片目数量。同一部片在书店与在大放映厅，观感与讨论氛围是两回事。</p>
+      </section>
+
+      <!-- 7 FAQ -->
+      <section class="panel faq" id="faq" aria-labelledby="faqTitle">
+        <div class="panel-head">
+          <span class="eyebrow">FAQ</span>
+          <h2 id="faqTitle">常见问题</h2>
+        </div>
+
+        <details>
+          <summary>同志短片放映一般需要提前多久报名？</summary>
+          <div class="faq-a">热门场次通常提前 7 天开放报名，48 小时内满员。11 月 7 日上海场在 10 月 31 日开放，11 月 1 日晚已报满 90 个名额。冷门时段如工作日下午，提前 2 天仍有位置。</div>
+        </details>
+        <details>
+          <summary>PrEP 用药科普里的“按需服用”和“每日服用”有什么区别？</summary>
+          <div class="faq-a">按需方案要求在性行为前 2—24 小时服首剂，之后按 24 小时间隔补服；每日方案固定时间服用。两种方案的适用人群与随访频率不同，具体选择需咨询医生。11 月 3 日更新的自检与用药条目列有随访时间点。</div>
+        </details>
+        <details>
+          <summary>线下沙龙对出柜状态有要求吗？</summary>
+          <div class="faq-a">没有统一要求。多数场地默认不拍照、不录音，报名表不收集真实姓名。个别场次会在说明里写明是否允许媒体在场，2026 年 10 月的 21 场中仅 2 场有媒体记录。</div>
+        </details>
+        <details>
+          <summary>平台栏目和影展短片的内容尺度差别大吗？</summary>
+          <div class="faq-a">差别明显。平台栏目多为情感与日常叙事，影展短片里涉及身体与亲密关系镜头的比例更高，部分场次会在排期注明“含露骨场景”。带初次观影者时，先看条目说明比猜更稳妥。</div>
+        </details>
+        <details>
+          <summary>城市友善空间地图里的“友善”如何判定？</summary>
+          <div class="faq-a">地图收录标准有三条：店员接受过相关培训、有无障碍或独立洗手间、近半年无投诉记录。63 家条目里，同时满足三条的为 41 家，其余标注了缺口。</div>
+        </details>
+      </section>
+
+      <!-- 8 用户评论 -->
+      <section class="panel" id="community" aria-labelledby="communityTitle">
+        <div class="panel-head">
+          <span class="eyebrow">Voices</span>
+          <h2 id="communityTitle">看过的人怎么说</h2>
+        </div>
+        <div class="comment-list">
+          <div class="comment">
+            <div class="comment-head"><span class="avatar">林</span><b>林野</b><time datetime="2026-11-06">11/06</time></div>
+            <p>《海雾之后》的映后问答比正片还长，导演讲了 2019 年拍初版时被剪掉的 8 分钟，那部分恰好是两人争吵的段落。这比笼统说“很感动”有用。</p>
+          </div>
+          <div class="comment">
+            <div class="comment-head"><span class="avatar">周</span><b>周野</b><time datetime="2026-10-26">10/26</time></div>
+            <p>成都那场把短片和栏目拼在一起放，秩序有点乱。30 人里后面一半几乎没说话，组织者也没给具体问题，只问“大家有什么感受”。这种问法很难接。</p>
+          </div>
+          <div class="comment">
+            <div class="comment-head"><span class="avatar">阿</span><b>阿泽</b><time datetime="2026-11-04">11/04</time></div>
+            <p>《台词之外》第 3 集的删改对照表值得存下来。12 部作品里有一部把“男朋友”改成“室友”，改了三次，前后版本都在。这种东西比口述可靠。</p>
+          </div>
+          <div class="comment">
+            <div class="comment-head"><span class="avatar">陈</span><b>陈默</b><time datetime="2026-11-02">11/02</time></div>
+            <p>地图秋版里那家咖啡馆我上周去过，店员确实不做多余打量，但座位只有 12 个，周末下午基本没位置。条目里没写座位数，算个小缺口。</p>
+          </div>
+          <div class="comment">
+            <div class="comment-head"><span class="avatar">K</span><b>K先生</b><time datetime="2026-11-01">11/01</time></div>
+            <p>平台剧集节奏快是快，可看三集之后记不住角色名字。不是片子差，是叙事太像。倒是那部 35 分钟的短片，两天后我还能复述分镜。</p>
+          </div>
+          <div class="comment">
+            <div class="comment-head"><span class="avatar">何</span><b>何川</b><time datetime="2026-10-19">10/19</time></div>
+            <p class="tone-warn">排期表里写着 19:00 入场，实际 19:25 才开门，外面站了半小时。内容还行，组织细节得跟上。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 相关资讯 -->
+      <section class="panel" id="news" aria-labelledby="newsTitle">
+        <div class="panel-head">
+          <span class="eyebrow">News</span>
+          <h2 id="newsTitle">相关资讯与行业动态</h2>
+        </div>
+        <ul class="news-list">
+          <li>
+            <h3>亚洲同志影展 2026 秋季单元公布片单</h3>
+            <p>10 月 30 日公布，共 34 部作品，其中 9 部为导演首作。巡展城市从 5 个扩到 7 个，新增西安与长沙两站，各安排 2 场放映。</p>
+          </li>
+          <li>
+            <h3>三家社区组织联合发布线下活动安全指引</h3>
+            <p>11 月 2 日发布，共 14 条，涵盖场地选择、影像记录授权、突发状况处理。指引明确要求活动前公示是否允许拍摄。</p>
+          </li>
+          <li>
+            <h3>HIV 自检试剂领取点扩至 6 个新城市</h3>
+            <p>11 月 3 日起，合肥、昆明、福州等 6 地的社区站点可匿名领取，每人每季度限 2 份，领取时无需出示身份证件。</p>
+          </li>
+          <li>
+            <h3>一部男同志题材长片进入院线排片讨论</h3>
+            <p>片方 10 月 28 日确认已提交公映申请，尚未公布档期。目前只有影展版本可看，片长 118 分钟，与申报版本是否一致未有说明。</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 10 相关推荐 -->
+      <section class="panel" id="related" aria-labelledby="relatedTitle">
+        <div class="panel-head">
+          <span class="eyebrow">Tags</span>
+          <h2 id="relatedTitle">相关推荐与检索标签</h2>
+        </div>
+        <div class="tags">
+          <a href="/#picks">男同志短片推荐</a>
+          <a href="/#deep">出柜访谈纪录片</a>
+          <a href="/#guide">PrEP 服药时间线</a>
+          <a href="/#updates">同志友善咖啡馆地图</a>
+          <a href="/#community">线下观影沙龙报名</a>
+          <a href="/#creator">同志题材编剧手记</a>
+          <a href="/#faq">伴侣关系沟通技巧</a>
+          <a href="/#news">亚洲同志影展排期</a>
+          <a href="/#guide">HIV 自检试剂领取</a>
+          <a href="/#picks">同居伴侣生活剧集</a>
+        </div>
+      </section>
+
+      <!-- 11 创作者证言 -->
+      <section class="panel" id="creator" aria-labelledby="creatorTitle">
+        <div class="panel-head">
+          <span class="eyebrow">Creators</span>
+          <h2 id="creatorTitle">创作者证言：拍完之后才知道的事</h2>
+        </div>
+        <p>《夜班公交》导演在 10 月 22 日的创作谈里提到，最初剪了 74 分钟，试映后收到 23 份反馈，其中 15 份说前 20 分钟人物太多记不住。最终版本删掉两条支线，压缩到 58 分钟。这个改动没有让片子变浅，反而让第三位受访者的段落完整保留。</p>
+        <p>《台词之外》的采访对象之一、编剧何川提到另一种经验：写同志角色时最容易落入“解释为什么是这样”的陷阱，好像每一场戏都要先自证。他后来把一段 3 分钟的解释性对白整段删掉，换成两人沉默着洗碗，观众反馈反而更集中。这些说法是创作者自述，属于转述层，未经第三方核实。</p>
+      </section>
+
+    </div>
+
+    <!-- 侧栏 -->
+    <aside class="side-col" aria-label="侧栏工具">
+      <div class="side-card">
+        <h3>站内查找</h3>
+        <form class="search-box" id="searchForm" role="search">
+          <label for="searchInput" class="panel-sub" style="position:absolute;left:-9999px">输入关键词</label>
+          <input id="searchInput" type="search" placeholder="试试：短片 / PrEP / 成都" autocomplete="off">
+          <button type="submit">查找</button>
+        </form>
+        <div class="search-result" id="searchResult" aria-live="polite">输入关键词，匹配板块标题与标签。</div>
+      </div>
+
+      <nav class="side-card side-nav" aria-label="页面内导航">
+        <h3>快速跳转</h3>
+        <ul id="sideNavList">
+          <li><a href="/#overview">社群概览</a></li>
+          <li><a href="/#picks">精选片单</a></li>
+          <li><a href="/#updates">本周更新</a></li>
+          <li><a href="/#channels">分类频道</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#community">用户评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#related">相关推荐</a></li>
+        </ul>
+      </nav>
+
+      <div class="side-card">
+        <h3>本月可核对数据</h3>
+        <ul style="list-style:none;padding:0;margin:0;font-size:.85rem">
+          <li style="display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:6px 0"><span>放映场次</span><b>21 场</b></li>
+          <li style="display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:6px 0"><span>有效问卷</span><b>214 份</b></li>
+          <li style="display:flex;justify-content:space-between;border-bottom:1px dashed var(--line);padding:6px 0"><span>友善空间</span><b>63 家</b></li>
+          <li style="display:flex;justify-content:space-between;padding:6px 0"><span>自检领取点</span><b>6 城</b></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer" id="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <rect width="64" height="64" rx="14" fill="#2f3d75"/>
+            <path d="M14 42a18 18 0 0 1 36 0" fill="none" stroke="#ef476f" stroke-width="5" stroke-linecap="round"/>
+            <path d="M20 42a12 12 0 0 1 24 0" fill="none" stroke="#ffd166" stroke-width="5" stroke-linecap="round"/>
+            <path d="M26 42a6 6 0 0 1 12 0" fill="none" stroke="#06d6a0" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-text">彩虹gtv男男</span>
+        </div>
+        <p class="footer-pos">汇总同志题材影音排期、线下沙龙与健康科普条目，按地区与议题建立可检索索引。</p>
+      </div>
+      <div>
+        <h4>内容频道</h4>
+        <ul class="footer-links">
+          <li><a href="/#picks">同志短片放映</a></li>
+          <li><a href="/#picks">男同志情感剧集</a></li>
+          <li><a href="/#deep">出柜经历访谈</a></li>
+          <li><a href="/#news">亚洲同志影展动态</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>健康与指南</h4>
+        <ul class="footer-links">
+          <li><a href="/#guide">PrEP 用药科普</a></li>
+          <li><a href="/#updates">HIV 自检试剂领取</a></li>
+          <li><a href="/#guide">线下放映体验指南</a></li>
+          <li><a href="/#faq">伴侣关系沟通</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>社群</h4>
+        <ul class="footer-links">
+          <li><a href="/#community">线下观影沙龙</a></li>
+          <li><a href="/#updates">城市友善空间</a></li>
+          <li><a href="/#creator">创作者手记</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-note">
+      <span>页面收录条目为示例数据，放映排期与领取信息以主办方与社区站点公告为准。更新日期：2026-11-08。</span>
+      <span>© 2026 彩虹gtv男男内容索引</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  var nav=document.getElementById('mainNav');
+  if(menuBtn&&nav){
+    menuBtn.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded',open?'true':'false');
+      menuBtn.textContent=open?'收起':'菜单';
+    });
+    nav.addEventListener('click',function(e){
+      if(e.target.tagName==='A'&&window.innerWidth<=960){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+        menuBtn.textContent='菜单';
+      }
+    });
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&nav.classList.contains('open')){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+        menuBtn.textContent='菜单';
+        menuBtn.focus();
+      }
+    });
+  }
+
+  var toTop=document.getElementById('toTop');
+  var onScroll=function(){
+    if(window.scrollY>520){toTop.classList.add('show');}
+    else{toTop.classList.remove('show');}
+  };
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  var sideLinks=Array.prototype.slice.call(document.querySelectorAll('#sideNavList a'));
+  var targets=sideLinks.map(function(a){
+    var id=a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  });
+  var spy=function(){
+    var pos=window.scrollY+140;
+    var idx=-1;
+    targets.forEach(function(t,i){
+      if(t&&t.offsetTop<=pos){idx=i;}
+    });
+    sideLinks.forEach(function(a,i){a.classList.toggle('active',i===idx);});
+  };
+  window.addEventListener('scroll',spy,{passive:true});
+  spy();
+
+  var form=document.getElementById('searchForm');
+  var input=document.getElementById('searchInput');
+  var out=document.getElementById('searchResult');
+  var index=[];
+  document.querySelectorAll('section[id] h2, section[id] h3, .tags a, .cat-chip').forEach(function(el){
+    var text=(el.textContent||'').trim();
+    if(!text)return;
+    var sec=el.closest('section');
+    index.push({text:text,id:sec?sec.id:''});
+  });
+  if(form){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var q=(input.value||'').trim().toLowerCase();
+      if(!q){out.textContent='输入关键词，匹配板块标题与标签。';return;}
+      var hits=index.filter(function(it){return it.text.toLowerCase().indexOf(q)>-1;});
+      if(!hits.length){
+        out.textContent='没有找到与「'+input.value.trim()+'」匹配的条目，试试“短片”“PrEP”“成都”等词。';
+        return;
+      }
+      var uniq=[];var seen={};
+      hits.forEach(function(h){
+        var key=h.text+'|'+h.id;
+        if(!seen[key]){seen[key]=1;uniq.push(h);}
+      });
+      var html='找到 '+uniq.length+' 条：<ul>';
+      uniq.slice(0,6).forEach(function(h){
+        html+='<li>'+(h.id?'<a href="/#'+h.id+'">'+h.text+'</a>':h.text)+'</li>';
+      });
+      html+='</ul>';
+      out.innerHTML=html;
+    });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"彩虹gtv男男",
+  "about":"男同志题材影音、线下放映与健康科普内容索引",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"同志短片放映一般需要提前多久报名？","acceptedAnswer":{"@type":"Answer","text":"热门场次通常提前 7 天开放报名，48 小时内满员。11 月 7 日上海场在 10 月 31 日开放，11 月 1 日晚已报满 90 个名额。"}},
+    {"@type":"Question","name":"PrEP 用药科普里的“按需服用”和“每日服用”有什么区别？","acceptedAnswer":{"@type":"Answer","text":"按需方案要求在性行为前 2—24 小时服首剂，之后按 24 小时间隔补服；每日方案固定时间服用。两种方案适用人群与随访频率不同，具体选择需咨询医生。"}},
+    {"@type":"Question","name":"线下沙龙对出柜状态有要求吗？","acceptedAnswer":{"@type":"Answer","text":"没有统一要求。多数场地默认不拍照、不录音，报名表不收集真实姓名。个别场次会写明是否允许媒体在场。"}},
+    {"@type":"Question","name":"平台栏目和影展短片的内容尺度差别大吗？","acceptedAnswer":{"@type":"Answer","text":"差别明显。平台栏目多为情感与日常叙事，影展短片涉及身体与亲密关系镜头的比例更高，部分场次会在排期注明“含露骨场景”。"}},
+    {"@type":"Question","name":"城市友善空间地图里的“友善”如何判定？","acceptedAnswer":{"@type":"Answer","text":"收录标准有三条：店员接受过相关培训、有无障碍或独立洗手间、近半年无投诉记录。63 家条目里同时满足三条的为 41 家。"}}
+  ]
+}
+</script>
+</body>
+                                     </html>
